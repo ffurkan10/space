@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Zen+Dots&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SpaceWorld</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Zen Dots', cursive;
+        }
+        .navbar {
+            background-color:rgb(63, 58, 58);       
+            padding: 25px 0px 20px;
+            top:0;
+            left: 0;
+            right: 0;
+            z-index: 9999;
+        }
+        .navbar-container {
+            max-width: 1200px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin: 0 auto;
+        }
+        .logo {
+            font-size: 25px;
+            text-decoration: none;
+            color: white;  
+            font-weight: 700;
+            margin-bottom: 20px;     
+            }
+        #logo-img {
+            width: 50px;
+        }
+        .navbar-menu-list {
+            display: flex;
+            list-style-type:none ;
+        }
+        .navbar-menu-items-active {
+            margin-right: 40px;
+        }
+        
+        .navbar-menu-items {
+            margin-right: 40px;
+            align-items: center;
+            display: flex;
+        }
+        .navbar-menu-items  {
+            text-decoration: none;
+            color:white;
+            text-transform: uppercase;
+            font-weight: 400;
+            font-size: 14px;
+            letter-spacing: 2px;
+            padding-top: 8px;
+        }
+        .navbar-menu-items:hover {
+            color: red;
+            transition: all 0.2s ease-out;
+        }
+         
+        #navbar-menu-items-btn.navbar-menu-items {
+            background-color: red;
+            padding: 6px 16px;
+            border-radius: 4px;
+        }
+        #navbar-menu-items-btn.navbar-menu-items:hover {
+            background-color: transparent;
+            color: white;
+            border: 1px solid red;
+            border-radius: 4px;
+            padding: 5px 15px;
+            transition: all 0.3s ease-out;
+        }
+     /*   body {
+            background: url("https://wallpaperaccess.com/full/2029165.jpg");
+            background-repeat: no-repeat;
+            background-position-x: center;
+            background-attachment: fixed;
+            min-height: 105vh; */
+        }
+        .menu {
+            background-color: rgb(63, 58, 58);
+        }
+        .main-container {
+            background-size: cover;
+            width: 100%;
+            min-height: 90vh;
+            align-items: center;
+            justify-self: start;
+            text-align:start;
+            display: flex;
+            background-color: rgb(63, 58, 58);
+        }
+        .main-content {
+            text-align: center;
+            margin-left: 20px;
+            color: white;
+            background-color: rgb(63, 58, 58);
+            
+        }
+        h1 {
+            font-size: 25px;
+            justify-content: center;
+            text-align: center;
+        }
+        .main-btn {
+            padding: 6px 16px;
+            background-color: red;
+            border-radius: 6px;
+            margin-top: 20px;
+            border: none;
+        }
+        .main-btn a {
+            color: white;
+            text-decoration: none;
+            font-size: 1rem;
+        }
+        .main-btn:hover {
+            background-color: transparent;
+            border: 1px solid red;
+            transition: all 0.3s ease-out;
+            
+        }
+        .para1 {
+            font-size: 18px;
+            text-align: center;
+            line-height: 30px;
+        }
+        #main-img {
+            width: 700px;
+        }
+
+        /* footer!! */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .footer-container {
+            background-color: rgb(63, 58, 58);
+            padding-bottom: 3rem;
+        }
+        .footer {
+            width: 80%;
+            height: 40vh;
+            color: white;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin: 0 auto;
+        }
+        .footer-heading {
+            display: flex;
+            flex-direction: column;
+            margin-right: 4rem;
+        }
+        .footer-heading h2 {
+            margin-bottom: 3rem;
+            font-size: 1.2rem;
+            font-weight: 400;
+        }
+        .footer-heading a {
+            text-decoration: none;
+            color: white;
+            margin-bottom: 0.5rem;
+            font-size: 12px;
+        }
+        .footer-heading a:hover {
+            color: red;
+            transition: all 0.3s ease-out;
+        }
+        .footer-email-form h2 {
+            margin-bottom: 2rem;
+            font-size: 1.3rem;
+            font-weight: 400;
+        }
+        #footer-email {
+            width: 250px;
+            height: 40px;
+            border: none;
+            outline: none;
+            border-radius: 4px;
+            padding-left: 0.5rem;
+            font-size: 0.9rem;
+        }
+        #footer-email-btn {
+            padding: 13px 16px;
+            background-color: red;
+            border-radius: 6px;
+            margin-top: 20px;
+            border: none;
+            color: white;
+            background-color: red;
+        }
+        #footer-email-btn:hover {
+            cursor: pointer;
+            background-color: royalblue;
+            transition: all 0.4s ease-out;
+        }
+
+        /* Cards */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .card-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative; 
+            flex-wrap: wrap;
+            padding: 40px;
+            background: rgb(63, 58, 58);
+            height: 550px;
+        }
+        .card {
+            max-width: 300px;
+            height: 190px;
+            position: relative;
+            background:darkgray;
+            margin: 30px 10px;
+            padding: 15px 15px;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+            transition: all 0.3s ease-in-out;
+        }
+        .card:hover {
+            height: 420px;
+        }
+        .card-img {
+            position: relative;
+            width: 260px;
+            height: 150px;
+            top: -60px;
+            z-index: 1;
+
+        }
+        .img-card {
+            width: 260px;
+            height: 170px;
+            max-width: 100%;
+            border-radius: 4px;
+        }
+        .card-content {
+            position: relative;
+            margin-top: -140px;
+            padding: 10px 15px;
+            text-align: center;
+            visibility: hidden;
+            opacity: 0;
+            transition: all 0.3s ease-in-out;
+        }
+        .card-container .card:hover .card-content{
+            visibility: visible;
+            opacity: 1;
+            margin-top: -40px;
+            transition-delay:0.3s;
+        }
+        .card-h {
+            color:red;
+        }
+    </style>
+</head >
+
+<body>
+    <div id="genel">
+        <div class="raki">
+            <section id="navbar" class="navbar">
+                <div class="navbar-container container">    
+                    <a href="#" class="logo"><img src="foto/logo2.svg" alt="" id="logo-img"> SpaceWorld</a>                   
+                    <ul class="navbar-menu-list">
+                        <li><a href="#" class="navbar-menu-items">Home</a></li>             
+                        <li><a href="#" class="navbar-menu-items">Reservations</a></li>             
+                        <li><a href="#" class="navbar-menu-items">News</a></li>             
+                        <li><a href="#" class="navbar-menu-items">Contact</a></li>             
+                        <li><a href="#" class="navbar-menu-items" id="navbar-menu-items-btn">Sign Up</a></li>             
+                    </ul>                    
+                </div>
+            </section>    
+            <div class="main">
+                <div class="main-container">
+                    <div class="main-content">
+                        <h1>Welcome</h1>
+                        <p class="para1">Lorem ipsum dolor sit amet,
+                             consectetur adipisicing elit.
+                              Beatae culpa tempora illum sint exercitationem eius modi a,
+                               corrupti expedita similique.</p>
+                       <button class="main-btn"> <a href="#">Get Started</a></button>
+                    </div>
+                    <div class="main-img-container">
+                        <img src="foto/pic2.svg" alt="" id="main-img">
+                    </div>
+                </div>
+            </div>    
+        </div>
+    </div>
+  <!--  <div class="modal" id="email-modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <div class="modal-content-left">
+                <img src="foto/pic3.svg" alt="">
+            </div>
+            <div class="modal-content-right">
+                <form action="/" method="GET" class="modal-form" id="form">
+                <h1>Get start with us today! Create your account by filling out the information below.</h1>
+                <div class="form-validation">
+                    <input type="text" class="modal-input" id="name" name="name" placeholder="Enter your name">
+                    <p>Error Message</p>
+                </div>
+                <div class="form-validation">
+                    <input type="email" class="modal-input" id="email" name="email" placeholder="Enter your email">
+                    <p>Error Message</p>
+                </div>
+                <div class="form-validation">
+                    <input type="password" class="modal-input" id="password" name="password" placeholder="Enter your password">
+                    <p>Error Message</p>
+                </div>
+                <div class="form-validation">
+                    <input type="password" class="modal-input" id="password-confirm" name="password" placeholder="Confirm your password">
+                    <p>Error Message</p>
+                </div>
+                <input type="submit" class="modal-input-btn" value="Sign Up">
+                <span class="modal-input-login">Already have an account? Login <a href="#">here</a></span>
+                </form>
+            </div>
+        </div>
+    </div> -->
+
+    <div class="card-container">
+        <div class="card">
+            <div class="card-img">
+                <img src="foto/space-1.jpg" class="img-card" alt="">
+            </div>
+            <div class="card-content">
+                <h2 class="card-h">Travel</h2>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Blanditiis possimus itaque cupiditate veritatis quo reprehenderit excepturi velit repellat corporis tenetur?</p>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-img">
+                <img src="foto/space.jpg" class="img-card" alt="">
+            </div>
+            <div class="card-content">
+                <h2 class="card-h">Planets</h2>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Blanditiis possimus itaque cupiditate veritatis quo reprehenderit excepturi velit repellat corporis tenetur?</p>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-img">
+                <img src="foto/space-3.jpg" class="img-card" alt="">
+            </div>
+            <div class="card-content">
+                <h2 class="card-h">Space</h2>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Blanditiis possimus itaque cupiditate veritatis quo reprehenderit excepturi velit repellat corporis tenetur?</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer-container">
+        <div class="footer">
+            <div class="footer-heading">
+                <h2>About Us</h2>
+                <a href="#">Blog</a>
+                <a href="#">Demo</a>
+                <a href="#">Customers</a>
+                <a href="#">Investors</a>
+                <a href="#">Terms of Service</a>
+            </div>
+            <div class="footer-heading">
+                <h2>Contact Us</h2>
+                <a href="#">Jobs</a>
+                <a href="#">Support</a>
+                <a href="#">Contact</a>
+                <a href="#">Sponsorships</a>
+            </div>
+            <div class="footer-heading">
+                <h2>Social Media</h2>
+                <a href="#">Youtube</a>
+                <a href="#">Instagram</a>
+                <a href="#">Twitter</a>
+                <a href="#">Facebook</a>
+            </div>
+            <div class="footer-email-form">
+                <h2>Join our newsletter</h2>
+                <input type="email" placeholder="Enter your email address" id="footer-email">
+                <input type="submit" value="Sign Up" id="footer-email-btn">
+            </div>
+        </div>
+    </div>
+</body>
+</html>
